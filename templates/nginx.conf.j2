@@ -1,0 +1,15 @@
+#Template Nginx
+upstream servidoresweb {
+{% for server in groups.Aplicacao %}
+    server {{ server }};
+{% endfor %}
+}
+ 
+server {
+    listen 80;
+ 
+    location / {
+        proxy_pass http://casabonita.com.br;
+    }
+}
+

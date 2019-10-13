@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.90.16
+  become: true
+  tasks:
+    - name: "Instalacao do MYSQL SERVER via APT"
+      apt: name=mysql-server state=present update_cache=yes
+ 
+    - name: "MYSQL started"
+      service: name=mysql state=started enabled=yes
