@@ -4,7 +4,7 @@
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 ##################################################
 
-- hosts: 172.31.90.16
+- hosts: all
   become: true
   vars:
     ansible_python_interpreter: "/usr/bin/env python3"
@@ -36,3 +36,5 @@
     apt:
       name: "docker-ce"
       update_cache: yes
+
+  
